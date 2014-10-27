@@ -1,0 +1,302 @@
+<html>
+<head>
+<title>{{ title }}</title>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+<script type="text/javascript" src="/js/common.js?1398713461"></script>
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+
+<!-- <script> -->
+<!--   $(function() { -->
+<!--   $("#tabs").tabs({ -->
+<!-- beforeLoad: function( event, ui) { -->
+<!-- ui.panel.html('<div align="center"><img src="http://svdev/~rhohman/testing/ctest/ajax-loader.gif"  alt="" width="20%"  style="vertical-align:middle;" \></div>'); -->
+<!-- }, -->
+ 
+<!-- }); -->
+
+<!-- }); -->
+
+<!-- </script> -->
+
+<!-- <script> -->
+
+<!--   function getdata() {  -->
+<!--   var proj_id = $(this).closest("tr").find("input").attr("value")   -->
+<!--   $.get("http://svdev/~rhohman/sii/starch-internal.py/data",{proj_id:proj_id}, -->
+<!--   function(data){ -->
+<!--   $(data).dialog({ -->
+<!--   modal: true, -->
+<!--   width: 350, -->
+<!--   show: { -->
+<!--   effect: "clip", -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   hide: { -->
+<!--   effect: "clip", -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   buttons: { -->
+<!--   OK: function () { -->
+<!--   $( this ).dialog("close"); -->
+<!--   $( this ).remove(); removes all the animations for the hide argument but without removing the object here the open function doesnt initiate the accordian(however try and get that function to work in the hide bit -->
+<!--   }}, -->
+<!--   open: function(){ -->
+<!--   $( "#accordion" ).accordion({autoHeight: true, header: "h4", collapsible: true, active: false}); -->
+<!--   }, -->
+<!-- }); -->
+<!-- }); -->
+<!-- }; -->
+  
+<!-- $(document).on("dblclick", ".row", getdata);   -->
+
+<!-- </script> -->
+
+<!-- <script> -->
+<!--   function submit_record(proj_info) { -->
+<!--   $.get("http://svdev/~rhohman/sii/starch-internal.py/record",{proj_info: proj_info}, -->
+<!--   function(data){ -->
+<!--   $(data).dialog( { -->
+<!--   modal: true, -->
+<!--   show: { -->
+<!--   effect: "clip",  -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   hide: { -->
+<!--   effect: "clip", -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   buttons: { -->
+<!--   Submit: function() { -->
+<!--   var err_type1  =  $( this ).closest("#record-box").find("select[name='err_type1']").val() -->
+<!--   var reviewer2      =  $( this ).closest("#record-box").find("select[name='reviewer2']").val() -->
+<!--   var comments1    =  $( this ).closest("#record-box").find("textarea[name='comments1']").val() -->
+<!--   $(this).dialog("close"); -->
+<!--   $.post("http://svdev/~rhohman/sii/starch-internal.py/record",{err_type1: err_type1, reviewer2: reviewer2, comments1: comments,  proj_info: proj_info}, function(data) {  -->
+<!--   if (data == 1) { -->
+<!--   submit_record({tab: proj_info['tab'], proj_id: proj_info['proj_id'],msg: 1, err_type1: err_type1, reviewer2: reviewer2, comments1: comments}); -->
+<!--   }else if (data == 2) { -->
+<!--   submit_record({ tab: proj_info['tab'], proj_id: proj_info['proj_id'],msg: 2, err_type1: err_type1, reviewer2: reviewer2, comments1: comments}); -->
+<!--   }else if (data == 3) { -->
+<!--   submit_record({tab: proj_info['tab'], proj_id: proj_info['proj_id'],msg: 3,  err_type1, reviewer2: reviewer2, comments1: comments}); -->
+<!--   }else{ -->
+<!--   $(data).dialog({ -->
+<!--   show: { -->
+<!--   effect: "clip", -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   hide: { -->
+<!--   effect: "clip", -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   buttons: { -->
+<!--   Ok: function () { -->
+<!--   $( this ).dialog("close"); -->
+<!--   }} -->
+<!--   }); -->
+<!--   $.get("http://svdev/~rhohman/sii/starch-internal.py/"+proj_info['tab'],{},function(data){  -->
+<!--   $("#" + proj_info['tab']).html(data); -->
+
+<!--   }); -->
+<!-- } -->
+ 
+<!-- }); -->
+<!-- }} -->
+<!-- }); -->
+<!-- })}; -->
+
+
+
+<!-- $(document).on("click", ".record", function() { -->
+<!--   var proj_id = $(this).closest("td").find("input").attr("value") -->
+<!--   var tab   =   $( this ).closest("div").attr("id") -->
+<!--   var record   = $(this).closest("button").attr("class") -->
+<!--   submit_record({proj_id: proj_id, tab: tab, record: record}) -->
+
+<!--   }); -->
+
+ 
+<!-- </script> -->
+
+<!-- <script> -->
+<!-- $(document).on("click", ".ready", function() { -->
+<!--   var proj_id = $(this).closest("td").find("input").attr("value") -->
+<!--   var tab     = $(this).closest("div").attr("id") -->
+<!--   $.post("http://svdev/~rhohman/sii/starch-internal.py/"+tab,{pid: proj_id, tab_sub: tab}, -->
+<!--   function(data){ -->
+<!--   $(data).dialog({ -->
+<!--   show: { -->
+<!--   effect: "clip", -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   hide: { -->
+<!--   effect: "clip", -->
+<!--   duration: 500, -->
+<!--   }, -->
+<!--   buttons: { -->
+<!--   Ok: function () { -->
+<!--   $( this ).dialog("close"); -->
+<!--   }} -->
+<!--   }); -->
+<!--     $.get("http://svdev/~rhohman/sii/starch-internal.py/"+tab,{},function(data){  -->
+<!--   $("#" + tab).html(data); -->
+<!-- }); -->
+<!-- }); -->
+<!-- }); -->
+<!-- </script> -->
+
+
+<style type="text/css">
+body, p, dl, dt, dd, ol, ul, li, th, td {
+  font-family: 'trebuchet ms',helvetica,sans-serif;
+  font-size: 12px;
+  color: #000000;
+}
+th {
+font-size: 125%;
+}
+input,textarea,select {
+  font-size: 100%;
+}
+table.tbrd {
+  border-collapse: collapse;
+  width: 100%
+}
+table.tbrd td {
+  border: 1px #000000 solid;
+  padding: 4px;
+  align: center;
+}
+table.tbrd2 {
+  border-collapse: collapse;
+  background-color: #336699;
+  width: 100%;
+  frame:void;
+}
+table.tbrd2 td {
+  padding: 4px;
+  color: #FFFFFF;
+
+}
+table.tbrd3 {
+  background-color: #FFFFFF;
+  border-collapse: collapse;
+  frame:void;
+  
+}
+table.tbrd3 td {
+  border: 1px #000000 solid; 
+  width: 40%;
+}
+.raw {
+  background-color: #336699;
+  font-weight: bold;
+
+}
+.lgb {
+  font-size: 120%;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.err {
+  color: #FF3D3D;
+  font-weight: bold; 
+}
+.suc {
+  color: #62972B;
+}
+.odd {
+  background-color: #FFFFFF;
+}
+.even {
+  background-color: #D5E2F2;
+}
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+border: 1px solid #aed0ea;
+background:  #D5E2F2;
+font-weight: bold;
+color:  #336699;
+
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+color: #336699;
+text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+border: 1px solid #2694e8;
+background: #FFFFFF;
+font-weight: bold;
+color: #336699;
+}
+.ui-widget-header {
+border: 0px; 
+background: #336699;
+color: #222222;
+border-radius: 0px;
+}
+.ui-dialog-title{
+color:  #FFFFFF;
+}
+#rightside{
+float: right;
+}
+a:visited{
+color:purple;
+}
+a:link{
+color:blue;
+}
+fieldset {
+border: 0;
+height: 20px;
+width: 100px;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus  {
+color: #222222;
+}
+.commbox{
+height: 20;
+width: 190;
+}
+.hide{
+display: none;
+}
+.show{
+display: inline;
+}
+
+
+</style>
+</head>
+<body>
+<div id="tabs">
+<header>
+
+<table class="tbrd2">
+    <tr>
+      <th class="lgb">Cruz Woods and Permaculture </th>
+    </tr>
+</table>
+</header>
+<!--   <ul> -->
+<!--     <li><a href="tabs-programming"><div id="tab1">Programming</div> </a></li> -->
+<!--     <li><a href="tabs-testing"><div id="tab2">Testing</div></a></li> -->
+<!--     <li><a href="tabs-proofing"><div id="tab3">Proofing</div></a></li> -->
+<!--     <li><a href="tabs-queue"><div id="tab4">Queue</div></a></li> -->
+<!--   </ul> -->
+<!-- </div> -->
+
+</body>
+</html>
